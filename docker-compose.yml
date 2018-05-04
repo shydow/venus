@@ -75,7 +75,7 @@ services:
     #image: sqshq/piggymetrics-mongodb
     build: mongodb
     volumes:
-        - /data/db:/tmp/data/auth-mongodb
+        - /data/db:${MONGODB_DIR}
     restart: always
     logging:
       options:
