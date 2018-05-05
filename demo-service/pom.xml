@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.tangpian</groupId>
-	<artifactId>drools-service</artifactId>
+	<artifactId>demo-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>drools-service</name>
+	<name>demo-service</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -35,7 +35,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+    </dependencies>
 
 	<build>
 		<plugins>
@@ -43,7 +47,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<finalName>drools-service</finalName>
+					<finalName>demo-service</finalName>
 				</configuration>
 			</plugin>
 		</plugins>

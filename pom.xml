@@ -17,7 +17,7 @@
         <module>registry</module>
         <module>auth-service</module>
 
-        <module>drools-service</module>
+        <module>demo-service</module>
     </modules>
 
 </project>

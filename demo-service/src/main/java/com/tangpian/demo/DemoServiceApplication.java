@@ -1,12 +1,12 @@
-package com.tangpian.droolsservice;
+package com.tangpian.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DroolsServiceApplication {
+public class DemoServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DroolsServiceApplication.class, args);
+		SpringApplication.run(DemoServiceApplication.class, args);
 	}
 }

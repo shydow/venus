@@ -75,7 +75,7 @@ services:
     #image: sqshq/piggymetrics-mongodb
     build: mongodb
     volumes:
-        - /data/db:${MONGODB_DIR}
+        - /data/db:${AUTH_MONGODB_DIR}
     restart: always
     logging:
       options:
@@ -99,13 +99,13 @@ services:
         max-size: "10m"
         max-file: "10"
 
-  drools-service:
+  demo-service:
     environment:
       CONFIG_SERVICE_PASSWORD: $CONFIG_SERVICE_PASSWORD
-      ACCOUNT_SERVICE_PASSWORD: $DROOLS_SERVICE_PASSWORD
+      ACCOUNT_SERVICE_PASSWORD: $DEMO_SERVICE_PASSWORD
       MONGODB_PASSWORD: $MONGODB_PASSWORD
     #image: sqshq/piggymetrics-account-service
-    build: drools-service
+    build: demo-service
     restart: always
     depends_on:
       config:
@@ -115,14 +115,14 @@ services:
         max-size: "10m"
         max-file: "10"
 
-  drools-mongodb:
+  demo-mongodb:
     environment:
-      INIT_DUMP: drools-service-dump.js
+      INIT_DUMP: demo-service-dump.js
       MONGODB_PASSWORD: $MONGODB_PASSWORD
     #image: sqshq/piggymetrics-mongodb
     build: mongodb
     volumes:
-        - /data/db:/tmp/data/drools-mongodb
+        - /data/db:${DEMO_MONGODB_DIR}
     restart: always
     logging:
       options:
